@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "ecmaFeatures": {
+        "blockBindings": true,
+        "defaultParams": true,
+        "destructuring": true,
+        "modules": true,
+        "templateStrings": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "quotes": [2, "single"],
+        "curly": 2
+    }
+}
