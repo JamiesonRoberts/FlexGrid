@@ -15,9 +15,9 @@ Chrome ◒ 4+ᵖ¹ ✔ 21+ᵖ ✔ 29+
 Safari ◒ 3.1+ᵖ¹ ✔ 6.1+ᵖ ✔ 9+  
 Opera ✘ 9+ ✔ 12.1+ ✔ 15+ᵖ ✔ 17+  
 
-    ¹Only supports the [2009 flexbox](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723) specification and does not support wrapping.
-    ²Only supports the [2012 flexbox](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)
-    ³Does not support flex-wrap or flex-flow properties
-    ⁴Partial support is due to large amount of bugs present (see known issues)
+> ¹Only supports the [old flexbox](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723) specification and does not support wrapping.  
+> ²Only supports the [2012 syntax](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)   
+> ³Does not support flex-wrap or flex-flow properties  
+> ⁴Partial support is due to large amount of bugs present (see known issues)  
 
 ⓘ  Most partial support refers to supporting an [older version](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/) of the specification or an [older syntax](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/).
