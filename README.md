@@ -44,6 +44,9 @@ Total Supported: `81.76%`
 Method of positioning elements in horizontal or vertical stacks. Support includes the support for the all properties prefixed with `flex` as well as `display: flex`, `display: inline-flex`, `align-content`, `align-items`, `align-self`, `justify-content` and `order`.
 
 ### Desktop Browser Support
+
+`✔ - Supported` | `◒ - Partially Supported` | `✘ - Not Supported`  
+
 | Browser   | Support levels                    | Current Version   |
 |:----------|:----------------------------------|:------------------|
 | IE        | `✘ 5.5+` `◒ 10+ᵖ²⁴` `◒ 11⁴`       | 11                |
@@ -54,6 +57,9 @@ Method of positioning elements in horizontal or vertical stacks. Support include
 | Opera     | `✘ 9+` `✔ 12.1+` `✔ 15+ᵖ` `✔ 17+` | 35                |
 
 ### Mobile Browser Support
+
+`✔ - Supported` | `◒ - Partially Supported` | `✘ - Not Supported`  
+
 | Browser                   | Support levels                    | Current Version   |
 |:--------------------------|:----------------------------------|:------------------|
 | iOS Safari                | `◒ 3.2+ᵖ¹` `◒ 7.1+ᵖ` `✔ 9.2+`     | 9.2               |
