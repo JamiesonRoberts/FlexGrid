@@ -21,7 +21,7 @@ var sass            = require('gulp-sass'),
     cssnano         = require('cssnano');
 
 var srcpath      = 'src';
-var destpath     = 'dest';
+var destpath     = 'dist';
 
 // SCSS processing
 gulp.task('style', function() {
