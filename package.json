@@ -8,7 +8,7 @@
         "url": "https://github.com/JamiesonRoberts/FlexGrid"
     },
     "scripts": {
-        "dev": "gulp --development && gulp watch --development",
+        "dev": "gulp && gulp watch",
         "start": "gulp"
     },
     "author": "Jamieson Roberts <hello@jamiesonroberts.ca> (http://jamiesonroberts.ca)",
@@ -25,8 +25,7 @@
         "gulp-sass": "^2.2.0",
         "gulp-uglify": "^1.5.3",
         "vinyl-buffer": "^1.0.0",
-        "vinyl-source-stream": "^1.1.0",
-        "yargs": "^4.3.2"
+        "vinyl-source-stream": "^1.1.0"
     },
     "engines" : {
         "node" : ">=4.2.0",
