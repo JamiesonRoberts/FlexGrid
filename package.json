@@ -1,6 +1,6 @@
 {
     "name": "flexbox-grid",
-    "version": "1.0.0",
+    "version": "1.0.0-prealpha",
     "main": "dist/index.html",
     "description": "FlexGrid - An IE compatible flexbox grid system",
     "repository": {
