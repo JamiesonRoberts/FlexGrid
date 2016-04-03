@@ -18,8 +18,7 @@ var browserify      = require('browserify'),
 var sass            = require('gulp-sass'),
     postcss         = require('gulp-postcss'),
     autoprefixer    = require('autoprefixer'),
-    cssnano         = require('cssnano'),
-    sassGlob        = require('gulp-sass-glob');
+    cssnano         = require('cssnano');
 
 var srcpath      = 'src';
 var destpath     = 'dest';
@@ -38,14 +37,12 @@ gulp.task('style', function() {
                     'android 4'
                 ]
             }
-        ),
-        cssnano
+        )
 	];
-    if (argv.development) {
-        processors.pop();
+    if (!argv.development) {
+        processors.push(cssnano);
     }
-	return gulp.src(srcpath+'/styles/**.scss')
-        .pipe(sassGlob())
+	return gulp.src(srcpath+'/styles/**/*.scss')
 		.pipe(sass())
 		.pipe(postcss(processors))
 		.pipe(gulp.dest(destpath+'/styles/'))
@@ -110,7 +107,7 @@ gulp.task('files', function() {
 
 gulp.task('watch', function() {
 	gulp.watch([srcpath+'/**/*', '!'+srcpath+'/styles/**/*', '!'+srcpath+'/scripts/**/*'], ['files']);
-	gulp.watch(srcpath+'/scripts/**/*', ['script']);
+	gulp.watch(srcpath +'/scripts/**/*', ['script']);
 	gulp.watch(srcpath +'/styles/**/*.scss', ['style']);
 });
 
