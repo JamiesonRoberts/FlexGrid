@@ -1,28 +1,31 @@
 {
-  "name": "flexbox-grid",
-  "version": "1.0.0",
-  "main": "gulpfile.js",
-  "description": "Flexbox grid with IE fixes",
-  "scripts": {
-    "dev": "gulp --development && gulp watch --development",
-    "start": "gulp"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^6.3.4",
-    "browserify": "^13.0.0",
-    "cssnano": "^3.5.2",
-    "event-stream": "^3.3.2",
-    "gulp": "^3.8.11",
-    "gulp-newer": "^1.0.0",
-    "gulp-postcss": "^6.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-sass-glob": "1.0.5",
-    "gulp-uglify": "^1.2.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "yargs": "^4.3.2"
-  }
+    "name": "flexbox-grid",
+    "version": "1.0.0",
+    "main": "gulpfile.js",
+    "description": "FlexGrid - An IE compatible flexbox grid system",
+    "scripts": {
+        "dev": "gulp --development && gulp watch --development",
+        "start": "gulp"
+    },
+    "author": "Jamieson Roberts <hello@jamiesonroberts.ca>",
+    "license": "MIT",
+    "dependencies": {
+        "autoprefixer": "^6.3.6",
+        "browserify": "^13.0.0",
+        "cssnano": "^3.5.2",
+        "event-stream": "^3.3.2",
+        "gulp": "^3.9.1",
+        "gulp-newer": "^1.1.0",
+        "gulp-postcss": "^6.1.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.2.0",
+        "gulp-uglify": "^1.5.3",
+        "vinyl-buffer": "^1.0.0",
+        "vinyl-source-stream": "^1.1.0",
+        "yargs": "^4.3.2"
+    },
+    "engines" : {
+        "node" : ">=4.2.0",
+        "npm" : ">=2.15.1"
+    }
 }
