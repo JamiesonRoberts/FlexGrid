@@ -1,8 +1,7 @@
 'use strict';
 // Core Gulp
 var gulp            = require('gulp'),
-    rename          = require('gulp-rename'),
-    argv            = require('yargs').argv;
+    rename          = require('gulp-rename');
 
 // General Plugins
 var source          = require('vinyl-source-stream'),
@@ -14,18 +13,20 @@ var source          = require('vinyl-source-stream'),
 var browserify      = require('browserify'),
     uglify          = require('gulp-uglify');
 
-// Stylesheet Processing
-var sass            = require('gulp-sass'),
-    postcss         = require('gulp-postcss'),
+// CSS Post Processing
+var postcss         = require('gulp-postcss'),
     autoprefixer    = require('autoprefixer'),
     cssnano         = require('cssnano');
 
+// SASS Processing
+var sass            = require('gulp-sass');
+
+// Paths
 var srcpath      = 'src';
 var destpath     = 'dist';
 
-// SCSS processing
-gulp.task('style', function() {
-	var processors = [
+gulp.task('css', function() {
+	var autoprefix = [
 		autoprefixer (
             { browsers :
                 [   'last 2 version',
@@ -39,20 +40,25 @@ gulp.task('style', function() {
             }
         )
 	];
-    if (!argv.development) {
-        processors.push(cssnano);
-    }
-	return gulp.src(srcpath+'/styles/**/*.scss')
+    var minify = [
+        cssnano
+    ];
+	return gulp.src(srcpath+'/scss/**/*.scss')
 		.pipe(sass())
-		.pipe(postcss(processors))
-		.pipe(gulp.dest(destpath+'/styles/'))
+		.pipe(postcss(autoprefix))
+		.pipe(gulp.dest(destpath+'/css/'))
+        .pipe(postcss(minify))
+        .pipe(
+            rename({
+                extname: '.min.css',
+                dirname: ''
+            })
+        )
+        .pipe(gulp.dest(destpath+'/css/'))
 });
 
-// JS processing
-
-// Browserified Scripts
-gulp.task('browserifyScript', function() {
-    return gulp.src(srcpath + '/scripts/*.bundle.js', function(err,files){
+gulp.task('script', function() {
+    return gulp.src(srcpath + '/javascript/*.bundle.js', function(err,files){
         var tasks = files.map(function(entry) {
             return browserify({ entries: [entry] })
                 .bundle()
@@ -68,47 +74,23 @@ gulp.task('browserifyScript', function() {
                         }
                     )
                 )
-                .pipe(gulp.dest(destpath + '/scripts/'));
+                .pipe(gulp.dest(destpath + '/includes/'));
             }
         );
         es.merge(tasks);
     });
 });
 
-// Non browserified scripts
-gulp.task('otherScripts', function() {
-    return gulp.src(
-            [
-                srcpath + '/scripts/**.js',
-                '!' + srcpath + '/scripts/*.bundle.js'
-            ]
-        )
-        .pipe(uglify())
-        .pipe(
-            rename(
-                function(fileObj){
-                    fileObj.basename = fileObj.basename.replace('.min','');
-                    fileObj.extname = '.min.js';
-                    fileObj.dirname = '';
-                }
-            )
-        )
-        .pipe(gulp.dest(destpath + '/scripts/'))
-});
-
-// Task to call both Javascript compilation scripts
-gulp.task('script', ['browserifyScript', 'otherScripts']);
-
 gulp.task('files', function() {
-	return gulp.src([srcpath+'/**/*', '!'+srcpath+'/styles/**/*', '!'+srcpath+'/scripts/**/*'])
+	return gulp.src([srcpath+'/**/*', '!'+srcpath+'/javascript/**/*'])
         .pipe(newer(destpath))
 		.pipe(gulp.dest(destpath))
 });
 
 gulp.task('watch', function() {
-	gulp.watch([srcpath+'/**/*', '!'+srcpath+'/styles/**/*', '!'+srcpath+'/scripts/**/*'], ['files']);
-	gulp.watch(srcpath +'/scripts/**/*', ['script']);
-	gulp.watch(srcpath +'/styles/**/*.scss', ['style']);
+	gulp.watch([srcpath+'/**/*', '!'+srcpath+'/javascript/**/*.js'], ['files']);
+	gulp.watch(srcpath +'/javascript/**/*.js', ['script']);
+	gulp.watch(srcpath +'/scss/**/*.scss', ['css']);
 });
 
-gulp.task('default', ['style', 'script', 'files']);
+gulp.task('default', ['css', 'script', 'files']);
