@@ -1,13 +1,17 @@
 {
     "name": "flexbox-grid",
     "version": "1.0.0",
-    "main": "gulpfile.js",
+    "main": "dist/index.html",
     "description": "FlexGrid - An IE compatible flexbox grid system",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JamiesonRoberts/FlexGrid"
+    },
     "scripts": {
         "dev": "gulp --development && gulp watch --development",
         "start": "gulp"
     },
-    "author": "Jamieson Roberts <hello@jamiesonroberts.ca>",
+    "author": "Jamieson Roberts <hello@jamiesonroberts.ca> (http://jamiesonroberts.ca)",
     "license": "MIT",
     "dependencies": {
         "autoprefixer": "^6.3.6",
