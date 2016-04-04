@@ -19,7 +19,8 @@ var postcss         = require('gulp-postcss'),
     cssnano         = require('cssnano');
 
 // SASS Processing
-var sass            = require('gulp-sass');
+var sass            = require('gulp-sass'),
+    sourcemaps      = require('gulp-sourcemaps');
 
 // Paths
 var srcpath      = 'src';
@@ -44,8 +45,10 @@ gulp.task('css', function() {
         cssnano
     ];
 	return gulp.src(srcpath+'/scss/**/*.scss')
+        .pipe(sourcemaps.init())
 		.pipe(sass())
 		.pipe(postcss(autoprefix))
+        .pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest(destpath+'/css/'))
         .pipe(postcss(minify))
         .pipe(
