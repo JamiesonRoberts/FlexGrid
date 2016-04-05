@@ -74,7 +74,7 @@ Method of positioning elements in horizontal or vertical stacks. Support include
 | IE Mobile                 | `◒ 10+ᵖ²` `✔ 11+`                 | 11                |
 | UC Browser for Android    | `◒ 9.9+ᵖ¹`                        | 9.9               |
 
-> ᵖPartial support with prefix.
+> ᵖPartial support with prefix.  
 > ¹Only supports the [old flexbox](http://www.w3.org/TR/2009/WD-css3-flexbox-20090723) specification and does not support wrapping.  
 > ²Only supports the [2012 syntax](http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/)   
 > ³Does not support flex-wrap or flex-flow properties  
