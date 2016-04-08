@@ -2,7 +2,7 @@
     "name": "mercury-grid",
     "version": "1.0.0-prealpha",
     "main": "dist/index.html",
-    "description": "FlexGrid - An backwards compatible flexbox grid library",
+    "description": "Mercury Grid - An backwards compatible flexbox grid library",
     "repository": {
         "type": "git",
         "url": "https://github.com/JamiesonRoberts/Mercury-Grid"
