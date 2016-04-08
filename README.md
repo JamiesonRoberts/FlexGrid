@@ -1,8 +1,8 @@
-# FlexGrid
+# Mercury (Hg) Grid
 
 A production ready drop in layout system based off of the flexible box layout (and eventually css grid layout) to make your life easier. Also included is 10up's IE flexbox polyfill [which can be found here](https://github.com/10up/flexibility) or on [cdnjs](https://cdnjs.com/libraries/flexibility).
 
-## A note about FlexGrid
+## A note about Hg-Grid
 
 One thing that has become very clear while digging into flexible box layouts and its specifications, is that flexbox is not meant to be the end all of layout tools for CSS. Flexbox is designed to make structuring components and small scale layouts very easy to setup and manipulate. While v1 of FlexGrid does a reasonable job of using flexbox to create grid like layouts on a larger scale, the ultimate tool you are looking for is a combination of flexible box layouts ([more information here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)) and css grid layouts ([more information here](https://css-tricks.com/snippets/css/complete-guide-grid/)). Each governing their own part of the layout.
 
