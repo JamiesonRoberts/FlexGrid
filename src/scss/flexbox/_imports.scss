@@ -1,2 +1,7 @@
+@mixin displayFlexibility($flexType: flex) {
+    -js-display: $flexType;
+    display: $flexType;
+}
+
 @import "container";
 @import "item";
