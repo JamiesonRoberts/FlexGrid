@@ -1,6 +1,6 @@
 {
   "name": "mercury-grid",
-  "version": "1.0.0-prealpha.2",
+  "version": "1.0.0-alpha",
   "main": "dist/index.html",
   "description": "Mercury Grid - An backwards compatible flexbox grid library",
   "repository": {
