@@ -1,11 +1,11 @@
 {
-    "name": "flexbox-grid",
-    "version": "1.0.0-alpha",
+    "name": "mercury-grid",
+    "version": "1.0.0-prealpha",
     "main": "dist/index.html",
     "description": "FlexGrid - An IE compatible flexbox grid system",
     "repository": {
         "type": "git",
-        "url": "https://github.com/JamiesonRoberts/FlexGrid"
+        "url": "https://github.com/JamiesonRoberts/Mercury-Grid"
     },
     "scripts": {
         "dev": "gulp && gulp watch",
