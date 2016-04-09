@@ -1,6 +1,13 @@
+// Mixin to automatically include targetable tag for IE compatability polyfill
+// Default value is flex, but can also accept inline-flex
+// If any non flex values are put in, it will output the proper CSS
 @mixin displayFlexibility($flexType: flex) {
-    -js-display: $flexType;
-    display: $flexType;
+    @if $flexType == flex or $flexType == inline-flex {
+        -js-display: $flexType;
+        display: $flexType;
+    } @else {
+        display: $flexType;
+    }
 }
 
 @import "container";
