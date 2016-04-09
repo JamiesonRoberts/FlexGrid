@@ -1,3 +1,3 @@
 .#{$cssPrefix}container {
-    @include displayFlexibility;
+    @include display();
 }
