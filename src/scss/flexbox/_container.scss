@@ -1,3 +1,24 @@
-.#{$cssPrefix}container {
-    @include display();
+// Container and direction
+$flex-direction: (row: row, rev: row-reverse, col: column, col-rev: column-reverse);
+
+@each $dirName, $direction in $flex-direction {
+    $hyphen: '-';
+    @if $dirName == row {
+        $hyphen: '';
+        $dirName: '';
+    }
+    .#{$cssPrefix}container#{$hyphen}#{$dirName} {
+        @include display();
+        flex-wrap: nowrap;
+        flex-direction: $direction;
+    }
+}
+
+// Child element wrap
+$flex-wrap: (wrap: wrap, wrap-rev: wrap-reverse);
+
+@each $wrapName, $wrap in $flex-wrap {
+    .#{$wrapName} {
+        flex-wrap: #{$wrap};
+    }
 }
